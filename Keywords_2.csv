@@ -1,0 +1,20 @@
+Statistics,Machine Learning,Deep Learning,R Language,Python Language,NLP,Data Engineering,Visualization,Web Scraping
+statistical model,linear regression,neural network,R,python,nlp,aws,tableau,Requests
+probability,logistic regression,keras,ggplot,flask,natural language processing,ec2,powerbi,Ixml
+normal distribution,k means,theano,shiny,django,topic modelling,gcp,power bi,beautiful soup
+poisson distribution,random forest,face detection,cran,pandas,named entry recognition,azure,alteryx,selenium
+survival models,xgboost,neural networks,dplyr,numpy,pos tagging,redshift,datastudio,scrapy
+hypothesis testing,svm,convolutional neural network,tidyr,sklearn,word2vec,docket,qlik,web scraping
+bayesian inference,naive bayes,cnn,lubridate,scikitlearn,word embedding,kubernetes,,crawling
+factor analysis,pca,recurrent neural network,knitr,matplotlib,spacy,scala,,crawler
+forecasting,decision trees,rnn,,seaborn,gensim,bigquery,,
+markov chain,svd,object detection,,scipy,nltk,hive,,
+monte carlo,ensemble methods,yolo,,bokeh,doc2vec,hadoop,,
+t test,support vector machines,rcnn,,statsmodel,cbow,spark,,
+null hypothesis,arima,cuda,,,bag of words,sql,,
+,svd,tensorflow,,,bert,s3,,
+,principal component analysis,lstm,,,sentiment analysis,docker,,
+,pca,gan,,,chatbot,sagemaker,,
+,dbscan,opencv,,,,sage maker,,
+,automl,recursive neural network,,,,,,
+,auto ml,deep learning,,,,,,
