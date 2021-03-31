@@ -3,6 +3,7 @@ import streamlit as st
 import zipfile
 from io import StringIO
 import pandas as pd
+import spacy
 from spacy.cli import download
 download('en_core_web_sm')
 nlp = spacy.load('en_core_web_sm')
