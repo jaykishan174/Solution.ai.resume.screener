@@ -3,8 +3,9 @@ import streamlit as st
 import zipfile
 from io import StringIO
 import pandas as pd
-import en_core_web_sm
-nlp = en_core_web_sm.load()
+from spacy.cli import download
+download('en_core_web_sm')
+nlp = spacy.load('en_core_web_sm')
 from collections import Counter
 from spacy.matcher import PhraseMatcher
 import docx
