@@ -117,7 +117,7 @@ def create_profile(file):
     dataf = pd.concat([name3['Candidate Name'], df3['Subject'], df3['Keyword'], df3['Count']], axis = 1)
     dataf['Candidate Name'].fillna(dataf['Candidate Name'].iloc[0], inplace = True)
     #data_add= pd.DataFrame({'Candidate Name': name2, 'Email_ID':email_candidate,'Mobile_Number':mobile_number_candidate,'Previous Designations':designations_candidate,'Previous Companies':prev_companies_candidate})
-
+    dataf['File Name']= file
     return(dataf)
 
 ########
@@ -139,16 +139,16 @@ if (uploaded_file is not None):
         final_database = final_database.append(dat)
         i +=1
         print(i)
-    final_database2 = final_database['Keyword'].groupby([final_database['Candidate Name'], final_database['Subject']]).count().unstack()
+    final_database2 = final_database['Keyword'].groupby([final_database['File Name'],final_database['Candidate Name'], final_database['Subject']]).count().unstack()
     final_database2.reset_index(inplace = True)
     final_database2.fillna(0,inplace=True)
     final_database2['Total Score']= final_database2.sum(axis=1)
     final_database2= final_database2.sort_values(by='Total Score', ascending=False)
     column_list= final_database2.columns[1:]
-    final_database3= pd.melt(final_database2, id_vars=['Candidate Name'], value_vars=final_database2.columns[1:-1])
+    final_database3= pd.melt(final_database2, id_vars=['Candidate Name'], value_vars=final_database2.columns[2:-1])
     final_database3= final_database3.rename(columns= {'value':'Score'})
     final_database4= final_database2.sort_values(by="Total Score", ascending=False).head()
-    final_database5=pd.melt(final_database4, id_vars=['Candidate Name'], value_vars=final_database4.columns[1:-1])
+    final_database5=pd.melt(final_database4, id_vars=['Candidate Name'], value_vars=final_database4.columns[2:-1])
     final_database5= final_database5.rename(columns= {'value':'Score'})
     final_database5= final_database5.merge(final_database4[['Candidate Name','Total Score']], how='left', on='Candidate Name')
     fig= px.bar(final_database5.sort_values(by='Total Score', ascending=True), x='Score', y= 'Candidate Name', orientation='h',color='Subject', title="Top 5 Candidates vs Total Score")
