@@ -48,7 +48,7 @@ def convert_pdf_to_txt(infile, pages=None):
 
 
 def create_profile(file):
-    if file_format in file:
+    if file_format in file.lower():
         text = convert_pdf_to_txt(zf.open(file))
     else:
         text= getText(zf.open(file))
